@@ -1,0 +1,14 @@
+usage: broadcast-relay [-v] -r 'from to' [-p X]
+
+broadcast-relay relays all UDP broadcast packets received on the 'from'
+interface out the 'to' interface, without changing the source or destination
+IP addresses (the source MAC is changed to be from the 'to' interface).
+
+-v	Verbose output.
+-r	Relay interface names 'from' and 'to' separated by a space.
+-p	Only relay this destination port. Can be specified multiple times.
+	If -p is not specified, all broadcasts will be forwarded.
+
+Example:
+	broadcast-relay -r 're0 em0' -p 12345
+
